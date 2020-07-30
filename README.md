@@ -5,13 +5,13 @@
 * Create a virtual enviornment.  
 * pip install -r requirements.txt
 * following enviornment variables need to be set either in session or in ~/.bash_profile  
-export sfUrl='https://<account>>.snowflakecomputing.com' 
-export SFUSER= '<SF USER>'    
-export SFPASSWORD= '<PWD>'    
-export SFDATABASE= '<DB NAME>'    
-export SFSCHEMA= '<schema>'    
-export SFWAREHOUSE='<warehouse>'    
-export SFROLE='<Role>'    
+export sfUrl='https://your_account.snowflakecomputing.com' 
+export SFUSER= 'SF USER'    
+export SFPASSWORD= 'PWD'    
+export SFDATABASE= 'DB NAME'    
+export SFSCHEMA= 'schema'    
+export SFWAREHOUSE='warehouse'    
+export SFROLE='Role'    
 
 ## Test Data Set up
 * Use the queries.xlsx as a template and set up your test data  
