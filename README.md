@@ -34,9 +34,9 @@ create or replace table python_runs(
     query_id_list = comma separated string of qids that you would like to test  
     total_limit = This is the parameter that will decide how many concurrent runs will be fired.  
     example: if you give query_id_list as 1,2,3,4 and total_limit as 20 each of the query will be created 5 times with random parameters 
-    and all of them will be fired at the same time. The total limit should be more than the number of qids
+    and all of them will be fired at the same time. The total limit should be more than the number of qids  
     run_for - This is the total time you want to load the system. If the input is 120 the previous queries will keep 
-    running in loop till 120 seconds. This is useful when you want to load the database from multiple systems  
+    running in loop till 120 seconds. This is useful when you want to load the database from multiple systems. If you want only one run make it 2.   
 
 * Snowflake keeps all history in SNOWFLAKE.ACCOUNT_USAGE.QUERY_HISTORY. But they take 5 minutes or more to appear  
 Hence we need to use a intermediate table.
