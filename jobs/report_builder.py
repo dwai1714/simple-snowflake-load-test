@@ -36,68 +36,6 @@ def build_report(spark, run_name, result_list):
     dt = datetime.utcnow().strftime("%Y-%m-%d-%H:%M")
     unique_run_name = f"{run_name}_{dt}"
     put_raw_data(spark, unique_run_name, result_list)
-    query = f'''
-        insert into cancer_test_runs (
-                RUN_NAME,
-                QUERY_ID,
-                WAREHOUSE_NAME,
-                WAREHOUSE_SIZE,
-                WAREHOUSE_TYPE,
-                CLUSTER_NUMBER,
-                QUERY_TAG
-                EXECUTION_STATUS,
-                ERROR_CODE,
-                ERROR_MESSAGE,
-                START_TIME,
-                END_TIME,
-                TOTAL_ELAPSED_TIME,
-                BYTES_SCANNED,
-                PERCENTAGE_SCANNED_FROM_CACHE,
-                PARTITIONS_SCANNED,
-                PARTITIONS_TOTAL,
-                COMPILATION_TIME,
-                EXECUTION_TIME
-                QUEUED_PROVISIONING_TIME,
-                QUEUED_REPAIR_TIME,
-                QUEUED_OVERLOAD_TIME,
-                TRANSACTION_BLOCKED_TIME,
-                CREDITS_USED_CLOUD_SERVICES,
-                QUERY_LOAD_PERCENT,
-                QUERY_NAME,
-                PYTHON_TIME
-    )
-    select 
-        a.RUN_NAME,
-        b.QUERY_ID,
-        b.WAREHOUSE_NAME,
-        b.WAREHOUSE_SIZE,
-        b.WAREHOUSE_TYPE,
-        b.CLUSTER_NUMBER,
-        b.QUERY_TAG,
-        b.EXECUTION_STATUS,
-        b.ERROR_CODE,
-        b.ERROR_MESSAGE,
-        b.START_TIME,
-        b.END_TIME,
-        b.TOTAL_ELAPSED_TIME,
-        b.BYTES_SCANNED,
-        b.PERCENTAGE_SCANNED_FROM_CACHE,
-        b.PARTITIONS_SCANNED,
-        b.PARTITIONS_TOTAL,
-        b.COMPILATION_TIME,
-        b.EXECUTION_TIME,
-        b.QUEUED_PROVISIONING_TIME,
-        b.QUEUED_REPAIR_TIME,
-        b.QUEUED_OVERLOAD_TIME,
-        b.TRANSACTION_BLOCKED_TIME,
-        b.CREDITS_USED_CLOUD_SERVICES,
-        b.QUERY_LOAD_PERCENT,
-        a.QUERY_NAME,
-        a.PYTHON_TIME
-        from SNOWFLAKE.ACCOUNT_USAGE.QUERY_HISTORY b, python_runs a
-    where a.QUERY_ID = b.QUERY_ID
-'''
-    snow.run_ddl_dml_without_spark(query)
 
 '''
 select 
