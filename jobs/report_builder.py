@@ -37,39 +37,3 @@ def build_report(spark, run_name, result_list):
     unique_run_name = f"{run_name}_{dt}"
     put_raw_data(spark, unique_run_name, result_list)
 
-'''
-select 
-        a.RUN_NAME,
-        b.TOTAL_ELAPSED_TIME,
-        a.PYTHON_TIME,
-        b.QUERY_ID,
-        b.WAREHOUSE_NAME,
-        b.WAREHOUSE_SIZE,
-        b.WAREHOUSE_TYPE,
-        b.CLUSTER_NUMBER,
-        b.QUERY_TAG,
-        b.EXECUTION_STATUS,
-        b.ERROR_CODE,
-        b.ERROR_MESSAGE,
-        b.START_TIME,
-        b.END_TIME,
-        b.BYTES_SCANNED,
-        b.PERCENTAGE_SCANNED_FROM_CACHE,
-        b.PARTITIONS_SCANNED,
-        b.PARTITIONS_TOTAL,
-        b.COMPILATION_TIME,
-        b.EXECUTION_TIME,
-        b.QUEUED_PROVISIONING_TIME,
-        b.QUEUED_REPAIR_TIME,
-        b.QUEUED_OVERLOAD_TIME,
-        b.TRANSACTION_BLOCKED_TIME,
-        b.CREDITS_USED_CLOUD_SERVICES,
-        b.QUERY_LOAD_PERCENT,
-        a.QUERY_NAME
-        from SNOWFLAKE.ACCOUNT_USAGE.QUERY_HISTORY b, python_runs a
-    where a.QUERY_ID = b.QUERY_ID
-    and upper(a.run_name) like '%RUN_WITHOUT_FETCH%'
-    and b.warehouse_name = 'WH_IRP_CANCER'
-    and b.user_name = 'Q845332_CANCER' 
-    and database_id = 408
-'''
