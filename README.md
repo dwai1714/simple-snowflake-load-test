@@ -5,7 +5,7 @@
 * Create a virtual enviornment.  
 * pip install -r requirements.txt
 * following enviornment variables need to be set either in session or in ~/.bash_profile  
-export sfUrl='https://your_account.snowflakecomputing.com' 
+export sfUrl='https://your_account.snowflakecomputing.com'  
 export SFUSER= 'SF USER'    
 export SFPASSWORD= 'PWD'    
 export SFDATABASE= 'DB NAME'    
