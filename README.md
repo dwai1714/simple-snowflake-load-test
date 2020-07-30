@@ -1,5 +1,8 @@
 # snow test suite
 
+## Disclaimer
+This code is tested in Mac OSX, Ubuntu and Centos. Not tested on Windows.
+
 ## Env Set Up
 * This code requires spark.
 * Create a virtual enviornment.  
@@ -74,8 +77,6 @@ select
     and b.warehouse_name = 'Your_database_name'  
     and b.user_name = 'Your user name'   
     and (a.run_name) like '%Your run names%';  
-
-
  
 ## How to run
 from terminal inside the virtual env 
