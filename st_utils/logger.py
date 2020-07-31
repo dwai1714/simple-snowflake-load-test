@@ -15,7 +15,7 @@ def get_logger(name):
     logger = logging.getLogger()  # get root logger
     if logger.handlers:
         return logger
-    log_location = "/tmp"
+    log_location = "/tmp/"
     current_time = datetime.now()
     current_date = current_time.strftime("%Y-%m-%d")
     file_name = "IRPV_" + current_date + '.log'
